@@ -1,0 +1,3 @@
+py-sds011==0.9
+pyserial==3.4
+requests

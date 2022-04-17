@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     (pm25, pm10) = sensor.query()
-    return render_template('index.html', pm25=pm25, pm10=pm10)
+    return render_template('index.html', p25=pm25, p10=pm10)
 
 
 

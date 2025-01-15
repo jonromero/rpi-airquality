@@ -2,15 +2,15 @@ Create an venv
 
 Use pip install -r requirement.txt
 
-Create a Service File:
+## Setting Up a Systemd Service for a Flask Application
 
-bash
-Copy code
+Follow these steps to create and configure a `systemd` service to run your Flask application at boot:
+
+### **1. Create a Service File**
+Create a new `systemd` service file:
+```bash
 sudo nano /etc/systemd/system/flask-app.service
-Add the Following Configuration:
 
-plaintext
-Copy code
 [Unit]
 Description=Flask Application
 After=network.target
@@ -23,23 +23,12 @@ ExecStart=/home/god/Sources/rpi-airquality/venv/bin/flask run --host=0.0.0.0
 
 [Install]
 WantedBy=multi-user.target
-Reload Systemd:
 
-bash
-Copy code
+
 sudo systemctl daemon-reload
-Enable the Service:
 
-bash
-Copy code
 sudo systemctl enable flask-app
-Start the Service:
 
-bash
-Copy code
 sudo systemctl start flask-app
-Check the Service Status:
 
-bash
-Copy code
 sudo systemctl status flask-app
